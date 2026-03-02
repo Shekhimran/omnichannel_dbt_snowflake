@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: omnichannel
+    database: OMNI_MANAGEMENT
+    schema: RAW
+
+    tables:
+      - name: CHANNELS
+      - name: CUSTOMERS
+      - name: PRODUCTS
+      - name: VISITHISTORY
+      - name: PURCHASEHISTORY

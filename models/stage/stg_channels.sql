@@ -1,11 +1,14 @@
-{{ config(
-    materialized = 'table'
-) }}
-
+with raw_channels AS
+(
 SELECT
-    $1::INT              AS channel_id,
-    $2::VARCHAR(150)     AS channel_name,
-    CURRENT_TIMESTAMP()  AS created_at,
-    CURRENT_TIMESTAMP()  AS updated_at
-FROM @raw_stg/channels.csv.gz
-(FILE_FORMAT => my_csv_format);
+    channel_id,
+    channel_name,
+    CREATED_AT,
+    UPDATED_AT
+FROM 
+    {{ source("omnichannel","CHANNELS")}}
+)
+SELECT
+    *
+FROM 
+    raw_channels

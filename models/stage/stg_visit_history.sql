@@ -1,13 +1,14 @@
-{{ config(
-    materialized = 'table'
-) }}
-
+with raw_visit_history AS
+(
 SELECT
-    $1::INT              AS customer_id,
-    $2::INT              AS channel_id,
-    $3::TIMESTAMP_NTZ    AS visit_timestamp,
-    $4::TIMESTAMP_NTZ    AS bounce_timestamp,
-    CURRENT_TIMESTAMP()  AS created_at,
-    CURRENT_TIMESTAMP()  AS updated_at
-FROM @raw_stg/visitHistory.csv.gz
-(FILE_FORMAT => my_csv_format);
+    customer_id,
+    channel_id,
+    visit_timestamp,
+    bounce_timestamp,
+    created_at,
+    updated_at
+FROM {{ source("omnichannel","VISITHISTORY")}}
+)
+SELECT
+    *
+FROM raw_visit_history

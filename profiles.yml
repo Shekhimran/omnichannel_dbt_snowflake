@@ -23,11 +23,12 @@ my_snowflake_project:
     dev:
       account: 'not needed'
       database: OMNI_MANAGEMENT
-      password: Shekhimran@7538
+      password: 'not needed'
       role: SYSADMIN
-      schema: RAW
+      schema: STAGE
       threads: 1
       type: snowflake
       user: 'not needed'
       warehouse: COMPUTE_WH
   target: dev
+
