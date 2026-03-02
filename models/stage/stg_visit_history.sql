@@ -11,4 +11,4 @@ FROM {{ source("omnichannel","VISITHISTORY")}}
 )
 SELECT
     *
-FROM raw_visit_history
+FROM raw_visit_history   
