@@ -1,0 +1,19 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: OMNI_MANAGEMENT  # Updated to the DB you were using earlier
+      schema: dev                # Ensure this schema exists in Snowflake!
+      warehouse: COMPUTE_WH      # Updated to your likely warehouse
+    prod:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: OMNI_MANAGEMENT
+      schema: prod
+      warehouse: COMPUTE_WH
