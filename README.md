@@ -119,7 +119,7 @@ dbt test
 
 
 
-## 📈 Future Roadmap
+##  Future Roadmap
 
 To further mature this pipeline, the following enhancements are planned:
 
