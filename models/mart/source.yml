@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: omnichannel
+    database: OMNI_MANAGEMENT
+    schema: RAW
+
+    tables:
+      - name: stg_channels
+      - name: stg_customers
+      - name: stg_products
+      - name: stg_visit_history
+      - name: stg_purchase_history
