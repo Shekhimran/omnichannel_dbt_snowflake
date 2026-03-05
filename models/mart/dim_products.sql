@@ -1,5 +1,4 @@
 -- Example 6-19. dim_products
-
 WITH stg_dim_products AS (
     SELECT
         product_sku  AS nk_product_sku,
@@ -11,6 +10,6 @@ WITH stg_dim_products AS (
 )
 
 SELECT
-    {{ dbt.hash(["nk_product_sku"]) }} AS sk_product,
+    {{ dbt_utils.generate_surrogate_key(['nk_product_sku']) }} AS sk_product,
     *
 FROM stg_dim_products

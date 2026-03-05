@@ -14,7 +14,6 @@ WITH stg_dim_customers AS (
 )
 
 SELECT
-    {{ dbt.hash(["nk_customer_id"]) }} AS sk_customer,
+    {{ dbt_utils.generate_surrogate_key(['nk_customer_id']) }} AS sk_customer,
     *
-FROM stg_dim_customers-- Example 6-18. dim_customers
-
+FROM stg_dim_customers

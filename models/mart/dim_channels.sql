@@ -10,6 +10,6 @@ WITH stg_dim_channels AS (
 )
 
 SELECT
-    {{ dbt.hash(["nk_channel_id"]) }} AS sk_channel,
+    {{ dbt_utils.generate_surrogate_key(['nk_channel_id']) }} AS sk_channel,
     *
 FROM stg_dim_channels
