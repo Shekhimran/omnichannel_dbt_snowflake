@@ -56,6 +56,7 @@ my_omni_project/
 │   │   ├── stg_channels.sql
 │   │   ├── stg_purchase_history.sql
 │   │   └── stg_visit_history.sql
+|   |   └── schema.yml
 │   │
 │   └── marts/                   # Gold Layer: Business Logic & Aggregations
 │       ├── core/
