@@ -25,8 +25,8 @@ SELECT
 
     DATEDIFF(
         MINUTE,
-        dt_bounce_timestamp,
-        dt_visit_timestamp
+        dt_visit_timestamp,
+        dt_bounce_timestamp
     ) AS mtr_length_of_stay_minutes
 
 FROM stg_fct_visit_history AS fct
